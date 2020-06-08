@@ -17,7 +17,7 @@ chmod +x sagemaker_keras_text_classification/train
 chmod +x sagemaker_keras_text_classification/serve
 
 # Get the region defined in the current configuration
-
+region=$(aws configure get region)
 fullname="local_${algorithm_name}:latest"
 
 # Get the login command from ECR and execute it directly
