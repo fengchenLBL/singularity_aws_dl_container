@@ -8,34 +8,30 @@ mv reInvent-Workshop-Data-Backup/* ./
 rm -rf reInvent-Workshop-Data-Backup reInvent-Workshop-Data-Backup.zip
 cd ../container/
 
-#################################################
-######### Buildi the SageMaker Container ########
-#################################################
+###################################################################################
+######### Build the SageMaker Container & Convert it to Singularity image #########
+###################################################################################
 algorithm_name=sagemaker-keras-text-classification
 
 chmod +x sagemaker_keras_text_classification/train
 chmod +x sagemaker_keras_text_classification/serve
 
-#account=$(aws sts get-caller-identity --query Account --output text)
-
-# Get the region defined in the current configuration (default to us-west-2 if none defined)
-region=$(aws configure get region)
-#region=${region:-us-west-2}
+# Get the region defined in the current configuration
 
 fullname="local_${algorithm_name}:latest"
 
 # Get the login command from ECR and execute it directly
-#$(aws ecr get-login --region ${region} --no-include-email)
 $(aws ecr get-login --no-include-email --region ${region} --registry-ids 763104351884)
 
-# Build the docker image locally with the image name and then push it to ECR
+# Build the docker image locally with the image name
+# In the "Dockerfile", modify the source image to select one of the available deep learning docker containers images:
+# https://aws.amazon.com/releasenotes/available-deep-learning-containers-images
 docker build  -t ${algorithm_name} .
 docker tag ${algorithm_name} ${fullname}
 
 # Build Singularity image from local docker image
 sifname="local_sagemaker-keras-text-classification.sif"
 sudo singularity build ${sifname} docker-daemon:${fullname}
-
 
 ################################
 ########## Local Test ########## 
@@ -49,4 +45,4 @@ cd local_test
 ./train_local.sh ../${sifname}
 
 ### Prediction
-#./serve_local.sh ${fullname}
+#./serve_local.sh ../${fullname}
