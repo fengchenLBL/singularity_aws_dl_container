@@ -1,22 +1,16 @@
-## Text Classification Using Keras & TensorFlow on Amazon SageMaker
+## Text Classification Using AWS Deep Learning Docker Containers
 
 A modified version of this AWS SageMaker lab guide: https://github.com/aws-samples/amazon-sagemaker-keras-text-classification
 
+* ### [Building the Singularity container using available aws deep learning docker containers Images](./singularity_docker.ipynb)  
 * ### Local Test:
-  1. Open a terminal:
   ```shell
   cd container
-  sh build_docker_local_test.sh
+  sh build_singularity_local_test.sh
   ```
-  2. Open another terminal
-  ```shell
-  cd container/local_test
-  ./predict.sh input.json application/json
-  ```
-
-* ### [Training and Hosting your Algorithm in Amazon SageMaker](./sagemaker_keras_text_classification.ipynb) 
- 
-* ### [Endpoint Test](./endpoint_test.ipynb)
 
 ## Citations
+https://aws.amazon.com/releasenotes/available-deep-learning-containers-images
 https://github.com/aws-samples/amazon-sagemaker-keras-text-classification
+https://github.com/lbnl-science-it/aws-sagemaker-keras-text-classification
+https://sylabs.io/guides/3.5/user-guide/
