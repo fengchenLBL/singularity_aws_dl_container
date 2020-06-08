@@ -10,7 +10,7 @@ A modified version of this AWS SageMaker lab guide: https://github.com/aws-sampl
   ```
 
 ## Citations
-https://aws.amazon.com/releasenotes/available-deep-learning-containers-images
-https://github.com/aws-samples/amazon-sagemaker-keras-text-classification
-https://github.com/lbnl-science-it/aws-sagemaker-keras-text-classification
-https://sylabs.io/guides/3.5/user-guide/
+1. https://aws.amazon.com/releasenotes/available-deep-learning-containers-images
+1. https://github.com/aws-samples/amazon-sagemaker-keras-text-classification
+1. https://github.com/lbnl-science-it/aws-sagemaker-keras-text-classification
+1. https://sylabs.io/guides/3.5/user-guide/
