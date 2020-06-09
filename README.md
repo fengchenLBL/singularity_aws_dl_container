@@ -2,7 +2,7 @@
 
 A modified version of this AWS SageMaker lab guide: https://github.com/aws-samples/amazon-sagemaker-keras-text-classification
 
-* ### [Building the Singularity container using available aws deep learning docker containers Images](./singularity_docker.ipynb)  
+* ### [Building the Singularity container using available aws deep learning docker containers](./singularity_docker.ipynb)  
 * ### Local Test:
   ```shell
   cd container
