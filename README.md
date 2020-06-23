@@ -9,7 +9,7 @@ A modified version of this AWS SageMaker lab guide: https://github.com/aws-sampl
   sh build_singularity_local_test.sh
   ```
 * ### Train text classifier on Lawrencium
-  * Upload the Singularity image and traning data
+  * Upload the Singularity image and training data
     ```shell
     sftp lrc-xfer.lbl.gov
     put local_sagemaker-keras-text-classification.sif
